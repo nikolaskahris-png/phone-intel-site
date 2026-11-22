@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phone-channel intelligence for voice AI sales teams</title>
+<meta name="description" content="A dataset of how companies actually answer their customer service line: touch-tone IVR, AI agent or human, menu depth and hold time, measured by calling the lines.">
+<style>
+  :root {
+    --bg: #ffffff; --fg: #14181f; --muted: #5a6472; --line: #e3e7ee;
+    --accent: #1f4fd8; --accent-fg: #ffffff; --soft: #f5f7fb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0e1116; --fg:#e8ebf0; --muted:#98a2b3; --line:#232a35; --accent:#6b93ff; --accent-fg:#0e1116; --soft:#151a22; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+  header { padding: 20px 0; border-bottom: 1px solid var(--line); }
+  header .wrap { display:flex; justify-content:space-between; align-items:center; }
+  .brand { font-weight:700; letter-spacing:-.01em; }
+  h1 { font-size: clamp(2rem, 5vw, 3rem); line-height:1.15; letter-spacing:-.02em; margin: 56px 0 16px; }
+  h2 { font-size: 1.4rem; letter-spacing:-.01em; margin: 0 0 12px; }
+  .lead { font-size: 1.15rem; color: var(--muted); max-width: 680px; }
+  .btn { display:inline-block; background:var(--accent); color:var(--accent-fg); padding:12px 22px; border-radius:8px; font-weight:600; text-decoration:none; }
+  .btn:hover { opacity:.9; }
+  .btn:focus-visible { outline:3px solid var(--fg); outline-offset:2px; }
+  .cta { margin: 28px 0 56px; }
+  .note { color: var(--muted); font-size:.9rem; margin-top:10px; }
+  section { padding: 40px 0; border-top: 1px solid var(--line); }
+  .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:16px; margin-top:16px; }
+  .card { background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:18px; }
+  .card h3 { margin:0 0 6px; font-size:1.05rem; }
+  .card p { margin:0; color:var(--muted); font-size:.95rem; }
+  ul { padding-left: 20px; } li { margin: 6px 0; }
+  footer { border-top:1px solid var(--line); padding:24px 0 40px; color:var(--muted); font-size:.9rem; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <span class="brand">Phone Intel</span>
+    <a class="btn" href="mailto:nikolas.phoneintel@gmail.com?subject=Free%2050-company%20sample%20request&body=Hi%2C%0A%0AI%27d%20like%20the%20free%2050-company%20sample.%0A%0AName%3A%0ACompany%3A%0AIndustries%20%2F%20regions%20of%20interest%3A%0A">Request sample</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>How companies actually answer their customer service line.</h1>
+  <p class="lead">Phone-channel intelligence for voice AI sales teams: touch-tone IVR, AI agent or human, menu depth and hold time. Measured by calling the lines, not by scraping websites or guessing.</p>
+  <div class="cta">
+    <a class="btn" href="mailto:nikolas.phoneintel@gmail.com?subject=Free%2050-company%20sample%20request&body=Hi%2C%0A%0AI%27d%20like%20the%20free%2050-company%20sample.%0A%0AName%3A%0ACompany%3A%0AIndustries%20%2F%20regions%20of%20interest%3A%0A">Request a free 50-company sample</a>
+    <p class="note">Opens an email to nikolas.phoneintel@gmail.com.</p>
+  </div>
+
+  <section>
+    <h2>What we measure</h2>
+    <div class="grid">
+      <div class="card"><h3>Answer type</h3><p>Whether the line is answered by a touch-tone IVR, an AI voice agent, or a human.</p></div>
+      <div class="card"><h3>Menu depth</h3><p>How many layers of options a caller must pass through to reach their goal.</p></div>
+      <div class="card"><h3>Hold time</h3><p>How long a caller waits before reaching an answer or a person.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Why it matters for voice AI sales</h2>
+    <ul>
+      <li>Find companies still on legacy touch-tone menus: the clearest candidates for conversational voice AI.</li>
+      <li>Spot companies already using an AI agent, so you can qualify them out or position against what they have.</li>
+      <li>Open outreach with observed facts about a prospect's phone experience, such as menu depth and wait time.</li>
+      <li>Segment and prioritise accounts by how their phone channel really behaves.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>How it's collected</h2>
+    <p>Each record comes from placing actual calls to a company's published customer service number and recording what happens: how the call is answered, how many menu layers appear, and how long until a result. Observations are what we heard on the call, and phone systems change, so each record should be read as a snapshot of when it was measured.</p>
+  </section>
+
+  <section>
+    <h2>Get a free sample</h2>
+    <p>Tell us which industries or regions matter to you, and we'll send a free sample of 50 companies so you can judge the data for yourself.</p>
+    <p><a class="btn" href="mailto:nikolas.phoneintel@gmail.com?subject=Free%2050-company%20sample%20request&body=Hi%2C%0A%0AI%27d%20like%20the%20free%2050-company%20sample.%0A%0AName%3A%0ACompany%3A%0AIndustries%20%2F%20regions%20of%20interest%3A%0A">Request a free 50-company sample</a></p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Phone Intel · Contact: <a href="mailto:nikolas.phoneintel@gmail.com">nikolas.phoneintel@gmail.com</a></div>
+</footer>
+</body>
+</html>
