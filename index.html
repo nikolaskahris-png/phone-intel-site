@@ -35,13 +35,24 @@
   ul { padding-left: 20px; } li { margin: 6px 0; }
   footer { border-top:1px solid var(--line); padding:24px 0 40px; color:var(--muted); font-size:.9rem; }
   a { color: var(--accent); }
+  .contact { display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; }
+  .email { font-family: ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.95rem; user-select:all; }
+  .copy { background:transparent; color:var(--fg); border:1px solid var(--line); border-radius:8px; padding:8px 14px; font:inherit; font-size:.9rem; font-weight:600; cursor:pointer; min-width:96px; }
+  .copy:hover { background:var(--soft); }
+  .copy:focus-visible { outline:3px solid var(--fg); outline-offset:2px; }
+  header .contact { justify-content:flex-end; }
+  @media (max-width: 640px) { header .email { display:none; } }
 </style>
 </head>
 <body>
 <header>
   <div class="wrap">
     <span class="brand">Phone Intel</span>
-    <a class="btn" href="mailto:nikolas.phoneintel@gmail.com?subject=Free%2050-company%20sample%20request&body=Hi%2C%0A%0AI%27d%20like%20the%20free%2050-company%20sample.%0A%0AName%3A%0ACompany%3A%0AIndustries%20%2F%20regions%20of%20interest%3A%0A">Request sample</a>
+    <div class="contact">
+      <a class="btn" href="mailto:nikolas.phoneintel@gmail.com?subject=Free%2050-company%20sample%20request&body=Hi%2C%0A%0AI%27d%20like%20the%20free%2050-company%20sample.%0A%0AName%3A%0ACompany%3A%0AIndustries%20%2F%20regions%20of%20interest%3A%0A">Request free sample</a>
+      <span class="email">nikolas.phoneintel@gmail.com</span>
+      <button type="button" class="copy">Copy email</button>
+    </div>
   </div>
 </header>
 
@@ -49,8 +60,12 @@
   <h1>How companies actually answer their customer service line.</h1>
   <p class="lead">Phone-channel intelligence for voice AI sales teams: touch-tone IVR, AI agent or human, menu depth and hold time. Measured by calling the lines, not by scraping websites or guessing.</p>
   <div class="cta">
-    <a class="btn" href="mailto:nikolas.phoneintel@gmail.com?subject=Free%2050-company%20sample%20request&body=Hi%2C%0A%0AI%27d%20like%20the%20free%2050-company%20sample.%0A%0AName%3A%0ACompany%3A%0AIndustries%20%2F%20regions%20of%20interest%3A%0A">Request a free 50-company sample</a>
-    <p class="note">Opens an email to nikolas.phoneintel@gmail.com.</p>
+    <div class="contact">
+      <a class="btn" href="mailto:nikolas.phoneintel@gmail.com?subject=Free%2050-company%20sample%20request&body=Hi%2C%0A%0AI%27d%20like%20the%20free%2050-company%20sample.%0A%0AName%3A%0ACompany%3A%0AIndustries%20%2F%20regions%20of%20interest%3A%0A">Request a free 50-company sample</a>
+      <span class="email">nikolas.phoneintel@gmail.com</span>
+      <button type="button" class="copy">Copy email</button>
+    </div>
+    <p class="note">The button opens an email draft. If it doesn't open, copy the address and write to us directly.</p>
   </div>
 
   <section>
@@ -79,13 +94,44 @@
 
   <section>
     <h2>Get a free sample</h2>
-    <p>Tell us which industries or regions matter to you, and we'll send a free sample of 50 companies so you can judge the data for yourself.</p>
-    <p><a class="btn" href="mailto:nikolas.phoneintel@gmail.com?subject=Free%2050-company%20sample%20request&body=Hi%2C%0A%0AI%27d%20like%20the%20free%2050-company%20sample.%0A%0AName%3A%0ACompany%3A%0AIndustries%20%2F%20regions%20of%20interest%3A%0A">Request a free 50-company sample</a></p>
+    <p>The sample is free and targeted to one industry of your choice, so you can judge the data on companies you actually sell to. For example:</p>
+    <ul>
+      <li>Insurance</li>
+      <li>Healthcare clinics</li>
+      <li>Home services (HVAC, plumbing)</li>
+      <li>Logistics</li>
+    </ul>
+    <div class="contact">
+      <a class="btn" href="mailto:nikolas.phoneintel@gmail.com?subject=Free%2050-company%20sample%20request&body=Hi%2C%0A%0AI%27d%20like%20the%20free%2050-company%20sample.%0A%0AName%3A%0ACompany%3A%0AIndustries%20%2F%20regions%20of%20interest%3A%0A">Request a free 50-company sample</a>
+      <span class="email">nikolas.phoneintel@gmail.com</span>
+      <button type="button" class="copy">Copy email</button>
+    </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap">Phone Intel · Contact: <a href="mailto:nikolas.phoneintel@gmail.com">nikolas.phoneintel@gmail.com</a></div>
 </footer>
+<script>
+document.querySelectorAll('.copy').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var addr = 'nikolas.phoneintel@gmail.com';
+    function done() {
+      btn.textContent = 'Copied';
+      setTimeout(function () { btn.textContent = 'Copy email'; }, 2000);
+    }
+    function fallback() {
+      var t = document.createElement('textarea');
+      t.value = addr; t.style.position = 'fixed'; t.style.opacity = '0';
+      document.body.appendChild(t); t.select();
+      try { document.execCommand('copy'); done(); } catch (e) {}
+      document.body.removeChild(t);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(addr).then(done, fallback);
+    } else { fallback(); }
+  });
+});
+</script>
 </body>
 </html>
